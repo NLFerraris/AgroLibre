@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="/productos">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Productos - AgroLibre</title>
+</head>
+
+<style>
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f0;
+    color: #333;
+  }
+  header {
+    background-color: #4a7c59;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  nav {
+    background-color: #3d6647;
+    padding: 0.5rem;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  nav ul li {
+    margin: 0 1rem;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .product-info {
+    padding: 1rem;
+  }
+  .product-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .product-price {
+    font-weight: bold;
+    color: #4a7c59;
+  }
+  .add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #4a7c59;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .add-to-cart:hover {
+    background-color: #3d6647;
+  }
+  .filters {
+    background-color: #e0e8e0;
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+  }
+  .filters h3 {
+    margin-top: 0;
+  }
+  .filter-group {
+    margin-bottom: 1rem;
+  }
+  .filter-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+  .filter-group select {
+    width: 100%;
+    padding: 0.5rem;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+  }
+  footer {
+    background-color: #4a7c59;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>AgroLibre</h1>
+    <p>Catálogo Completo de Productos</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/categorias">Categorías</a></li>
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <section class="filters">
+      <h3>Filtros</h3>
+      <div class="filter-group">
+        <label for="category">Categoría:</label>
+        <select id="category">
+          <option value="">Todas las categorías</option>
+          <option value="maquinaria">Maquinaria</option>
+          <option value="semillas">Semillas</option>
+          <option value="fertilizantes">Fertilizantes</option>
+          <option value="herramientas">Herramientas</option>
+        </select>
+      </div>
+      <div class="filter-group">
+        <label for="price">Rango de Precio:</label>
+        <select id="price">
+          <option value="">Todos los precios</option>
+          <option value="0-100">$0 - $100</option>
+          <option value="101-500">$101 - $500</option>
+          <option value="501-1000">$501 - $1000</option>
+          <option value="1001+">$1001+</option>
+        </select>
+      </div>
+    </section>
+
+    <h2>Todos los Productos</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="tractor.jpg" alt="Tractor agrícola rojo, estilo moderno y robusto" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Tractor Agrícola</h3>
+          <p class="product-price">$50,000</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="semillas_trigo.jpg" alt="Semillas de trigo doradas en un saco de arpillera" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Semillas de Trigo</h3>
+          <p class="product-price">$20/kg</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="fertilizante_quimico.jpg" alt="Bolsa de fertilizante químico con etiqueta técnica" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Fertilizante Químico</h3>
+          <p class="product-price">$40/25kg</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="cosechadora.jpg" alt="Cosechadora moderna en un campo de trigo" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Cosechadora</h3>
+          <p class="product-price">$100,000</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="pala.jpg" alt="Pala de jardín con mango de madera" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Pala de Jardín</h3>
+          <p class="product-price">$25</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="invernadero.jpg" alt="Kit de invernadero pequeño para jardín" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Kit de Invernadero</h3>
+          <p class="product-price">$300</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2023 AgroLibre. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+        const productName = this.parentNode.querySelector('.product-title').textContent;
+        alert(`¡${productName} agregado al carrito!`);
+        // Aquí se implementaría la lógica real para agregar al carrito
+      });
+    });
+
+    // Simulación de filtrado de productos
+    document.getElementById('category').addEventListener('change', filterProducts);
+    document.getElementById('price').addEventListener('change', filterProducts);
+
+    function filterProducts() {
+      const category = document.getElementById('category').value;
+      const price = document.getElementById('price').value;
+      console.log(`Filtrando por categoría: ${category} y precio: ${price}`);
+      // Aquí se implementaría la lógica real de filtrado
+      alert('Filtros aplicados. Esta es una simulación, los productos no cambiarán en esta demostración.');
+    }
+  </script>
+</body></html>

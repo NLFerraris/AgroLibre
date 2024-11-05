@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <base href="https://agro-ecommerce.com/">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AgroLibre - Tu Tienda en Línea de Productos Agrícolas</title>
+</head>
+
+<style>  
+  body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f0;
+    color: #333;
+  }
+  header {
+    background-color: #4a7c59;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+  }
+  nav {
+    background-color: #3d6647;
+    padding: 0.5rem;
+  }
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+  }
+  nav ul li {
+    margin: 0 1rem;
+  }
+  nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+  }
+  .product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+  }
+  .product-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    transition: transform 0.3s ease;
+  }
+  .product-card:hover {
+    transform: translateY(-5px);
+  }
+  .product-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+  .product-info {
+    padding: 1rem;
+  }
+  .product-title {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+  }
+  .product-price {
+    font-weight: bold;
+    color: #4a7c59;
+  }
+  .add-to-cart {
+    display: block;
+    width: 100%;
+    padding: 0.5rem;
+    background-color: #4a7c59;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .add-to-cart:hover {
+    background-color: #3d6647;
+  }
+  footer {
+    background-color: #4a7c59;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+  }
+</style>
+</head>
+<body>
+  <header>
+    <h1>AgroLibre</h1>
+    <p>Tu Tienda en Línea de Productos Agrícolas</p>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="/productos">Productos</a></li>
+      <li><a href="/categorias">Categorías</a></li>
+      <li><a href="/nosotros">Nosotros</a></li>
+      <li><a href="/contacto">Contacto</a></li>
+    </ul>
+  </nav>
+  
+  <main>
+    <h2>Productos Destacados</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="tractor.jpg" alt="Tractor agrícola rojo, estilo moderno y robusto" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Tractor Agrícola</h3>
+          <p class="product-price">$50,000</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="semillas.jpg" alt="Variedad de semillas agrícolas en bolsas transparentes" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Semillas de Maíz</h3>
+          <p class="product-price">$25/kg</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="fertilizante.jpg" alt="Bolsa de fertilizante orgánico, diseño ecológico" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Fertilizante Orgánico</h3>
+          <p class="product-price">$30/20kg</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="sistema_riego.jpg" alt="Sistema de riego por goteo moderno instalado en un campo" class="product-image" width="250" height="200">
+        <div class="product-info">
+          <h3 class="product-title">Sistema de Riego</h3>
+          <p class="product-price">$500</p>
+          <button class="add-to-cart">Agregar al Carrito</button>
+        </div>
+      </div>
+    </div>
+  </main>
+  
+  <footer>
+    <p>&copy; 2024 AgroLibre. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.add-to-cart').forEach(button => {
+      button.addEventListener('click', function() {
+        const productName = this.parentNode.querySelector('.product-title').textContent;
+        alert(`¡${productName} agregado al carrito!`);
+        // Aquí se implementaría la lógica real para agregar al carrito
+      });
+    });
+  </script>
+</body></html>
